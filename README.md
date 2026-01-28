@@ -1,1 +1,1 @@
-# DBI-MambaUNet-with-FA-FTL
+# DBI-MambaUNet-with-SA-FTL
