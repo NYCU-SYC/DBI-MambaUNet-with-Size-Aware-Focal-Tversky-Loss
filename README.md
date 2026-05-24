@@ -101,6 +101,7 @@ nnUNetv2_train 701 3d_fullres 0 -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_
 Available DBI-MambaUNet trainers:
 
 - `nnUNetTrainerDBI-MambaUNet_Dice_Loss`
+- `nnUNetTrainerDBI-MambaUNet_Dice_CE_Loss`
 - `nnUNetTrainerDBI-MambaUNet_Tversky_Loss`
 - `nnUNetTrainerDBI-MambaUNet_Tversky_CE_Loss`
 - `nnUNetTrainerDBI-MambaUNet_FocalTversky_Loss`
