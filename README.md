@@ -1,8 +1,8 @@
 # DBI-MambaUNet with Size-Aware Focal Tversky Loss
 
-DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2. It preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet architecture in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
+DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2, with two main focuses: the DBI-MambaUNet architecture and the proposed Size-Aware Focal Tversky Loss (SA-FTL). It preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet network in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
 
-This repository focuses on training DBI-MambaUNet with Size-Aware Focal Tversky loss, which is intended for difficult and size-imbalanced segmentation targets. For comparison and ablation studies, it also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
+SA-FTL is the default and central training objective in this repository. It is designed for difficult, size-imbalanced segmentation targets by combining the region-overlap behavior of Tversky-style losses with a size-aware weighting strategy that emphasizes challenging structures. For comparison and ablation studies, this repository also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
 
 The codebase follows [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) for the overall segmentation pipeline and follows the [U-Mamba](https://github.com/bowang-lab/U-Mamba) installation flow for Mamba-related dependencies. Because DBI-MambaUNet relies on [Mamba](https://github.com/state-spaces/mamba), please make sure the CUDA, PyTorch, and Mamba packages are compatible before running training.
 
