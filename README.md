@@ -1,8 +1,11 @@
 # DBI-MambaUNet with Size-Aware Focal Tversky Loss
 
-Size-Aware Focal Tversky Loss (SA-FTL) is a central focus of this repository, together with the DBI-MambaUNet architecture for 3D biomedical image segmentation. Built on top of nnU-Net v2, this framework preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet network in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
+DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2. This repository highlights two equally important components: the DBI-MambaUNet architecture and the proposed Size-Aware Focal Tversky Loss (SA-FTL).
 
-SA-FTL is the default and central training objective in this repository. It is designed for difficult, size-imbalanced segmentation targets by combining the region-overlap behavior of Tversky-style losses with a size-aware weighting strategy that emphasizes challenging structures. For comparison and ablation studies, this repository also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
+- **DBI-MambaUNet architecture**: a dedicated 3D segmentation network implemented in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py` and integrated into the nnU-Net v2 training and inference pipeline.
+- **Size-Aware Focal Tversky Loss (SA-FTL)**: the default training objective, designed for difficult and size-imbalanced segmentation targets by combining Tversky-style region-overlap optimization with size-aware weighting.
+
+Together, these components preserve the standard nnU-Net data format, planning, training, and inference workflow while adding a custom network and loss for challenging 3D biomedical segmentation tasks. For comparison and ablation studies, this repository also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
 
 The codebase follows [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) for the overall segmentation pipeline and follows the [U-Mamba](https://github.com/bowang-lab/U-Mamba) installation flow for Mamba-related dependencies. Because DBI-MambaUNet relies on [Mamba](https://github.com/state-spaces/mamba), please make sure the CUDA, PyTorch, and Mamba packages are compatible before running training.
 
