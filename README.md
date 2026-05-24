@@ -1,8 +1,10 @@
 # DBI-MambaUNet with Size-Aware Focal Tversky Loss
 
-DBI-MambaUNet is an nnU-Net v2 based framework for 3D biomedical image segmentation. The project adds a DBI-MambaUNet network under `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py` and custom nnU-Net trainers for Dice, Tversky, Focal-Tversky, Generalized-Dice, and Size-Aware Focal Tversky losses.
+DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2. It preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet architecture in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
 
-This repository is built on top of [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), and the Mamba installation flow follows [U-Mamba](https://github.com/bowang-lab/U-Mamba), which depends on [Mamba](https://github.com/state-spaces/mamba).
+This repository focuses on training DBI-MambaUNet with Size-Aware Focal Tversky loss, which is intended for difficult and size-imbalanced segmentation targets. For comparison and ablation studies, it also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
+
+The codebase follows [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) for the overall segmentation pipeline and follows the [U-Mamba](https://github.com/bowang-lab/U-Mamba) installation flow for Mamba-related dependencies. Because DBI-MambaUNet relies on [Mamba](https://github.com/state-spaces/mamba), please make sure the CUDA, PyTorch, and Mamba packages are compatible before running training.
 
 ## Installation
 
@@ -81,16 +83,16 @@ Replace `DATASET_ID` with the numeric id of your nnU-Net dataset, for example `7
 
 ## Training
 
-Default DBI-MambaUNet trainer with Size-Aware Focal Tversky + CE loss:
+Default DBI-MambaUNet trainer with Size-Aware Focal Tversky loss:
 
 ```bash
-nnUNetv2_train DATASET_ID 3d_fullres FOLD -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_CE_Loss
+nnUNetv2_train DATASET_ID 3d_fullres FOLD -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_Loss
 ```
 
 Example:
 
 ```bash
-nnUNetv2_train 701 3d_fullres 0 -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_CE_Loss
+nnUNetv2_train 701 3d_fullres 0 -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_Loss
 ```
 
 Available DBI-MambaUNet trainers:
@@ -114,7 +116,7 @@ nnUNetv2_predict \
   -d DATASET_ID \
   -c 3d_fullres \
   -f FOLD \
-  -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_CE_Loss \
+  -tr nnUNetTrainerDBI-MambaUNet_SizeAwareTversky_Loss \
   --disable_tta
 ```
 
