@@ -1,6 +1,6 @@
 # DBI-MambaUNet with Size-Aware Focal Tversky Loss
 
-DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2, with two main focuses: the DBI-MambaUNet architecture and the proposed Size-Aware Focal Tversky Loss (SA-FTL). It preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet network in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
+Size-Aware Focal Tversky Loss (SA-FTL) is a central focus of this repository, together with the DBI-MambaUNet architecture for 3D biomedical image segmentation. Built on top of nnU-Net v2, this framework preserves the standard nnU-Net data format, planning, training, and inference workflow while adding the DBI-MambaUNet network in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
 
 SA-FTL is the default and central training objective in this repository. It is designed for difficult, size-imbalanced segmentation targets by combining the region-overlap behavior of Tversky-style losses with a size-aware weighting strategy that emphasizes challenging structures. For comparison and ablation studies, this repository also provides custom nnU-Net trainers for Dice, Tversky, Focal Tversky, Generalized Dice, and CE-combined loss variants.
 
