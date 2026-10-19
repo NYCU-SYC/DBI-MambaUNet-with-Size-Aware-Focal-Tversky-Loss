@@ -37,9 +37,9 @@ class nnUNetTrainerDBIMambaUNet_SizeAwareTversky_Loss(nnUNetTrainer):
         focal_tversky_kwargs = {
             'alpha': 0.3,
             'beta': 0.7,
-            'gamma': 1.0,
+            'gamma': 1.33,
             'size_gamma': 0.8,
-            'bg_weight': 0.8,
+            'bg_weight': 1.1,
             'conn': 3,
             'normalize_pos': True,
             'smooth': 1e-6
