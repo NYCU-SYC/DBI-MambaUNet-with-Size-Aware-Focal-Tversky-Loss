@@ -1,5 +1,20 @@
 # DBI-MambaUNet with Size-Aware Focal Tversky Loss
 
+## Download pretrained weights
+
+[![Download pretrained weights](https://img.shields.io/badge/Download-Pretrained_weights-238636?style=for-the-badge)](https://github.com/NYCU-SYC/DBI-MambaUNet-with-Size-Aware-Focal-Tversky-Loss/releases/download/pretrained-weights-v1/nnUNetTrainerDBI-MambaUNet_SizeAwareFocalTversky_Loss.pth)
+[![Download configuration](https://img.shields.io/badge/Download-Configuration-0969da?style=for-the-badge)](https://github.com/NYCU-SYC/DBI-MambaUNet-with-Size-Aware-Focal-Tversky-Loss/releases/download/pretrained-weights-v1/nnUNetTrainerDBI-MambaUNet_SizeAwareFocalTversky_Loss_config.zip)
+
+**Pretrained weights are available.** Download the **best checkpoint (~624 MiB)** and its **required configuration** using the buttons above.
+
+- **Weights:** `nnUNetTrainerDBI-MambaUNet_SizeAwareFocalTversky_Loss.pth`
+- **Configuration:** `plans.json` and `dataset.json` in the configuration ZIP.
+- **[Setup instructions and checksums](https://github.com/NYCU-SYC/DBI-MambaUNet-with-Size-Aware-Focal-Tversky-Loss/releases/tag/pretrained-weights-v1)** — read before inference. Filenames are standardized for distribution; original checkpoint metadata is retained, and inference compatibility has not yet been verified.
+
+> Download both files. **Code → Download ZIP** and the automatic **Source code** archives do not include model weights. The training and inference examples below describe the framework workflow, not a validated command for this checkpoint.
+
+---
+
 DBI-MambaUNet is a 3D biomedical image segmentation framework built on top of nnU-Net v2. This repository highlights two equally important components: the DBI-MambaUNet architecture and the proposed Size-Aware Focal Tversky Loss (SA-FTL).
 
 - **DBI-MambaUNet architecture**: a dedicated 3D segmentation network implemented in `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py` and integrated into the nnU-Net v2 training and inference pipeline.
@@ -128,7 +143,7 @@ nnUNetv2_predict \
 
 - The main network implementation is `DBI-MambaUNet/nnunetv2/nets/DBI-MambaUNet_3d.py`.
 - Size-aware trainers use `SizeAwareTverskyLoss`, where `gamma` is mapped to the focal term (`focal_gamma`) for Size-Aware Focal Tversky behavior.
-- Trained weights, datasets, preprocessing outputs, and large medical image files are intentionally ignored by git.
+- Pretrained weights are distributed through [GitHub Releases](https://github.com/NYCU-SYC/DBI-MambaUNet-with-Size-Aware-Focal-Tversky-Loss/releases/tag/pretrained-weights-v1), not stored in git. Datasets, preprocessing outputs, and large medical image files are intentionally ignored by git.
 - This repository does not vendor the Mamba source tree. Install `causal-conv1d` and `mamba-ssm` in the environment instead.
 - If AMP produces NaNs in Mamba blocks, try disabling AMP in the trainer, as also noted by U-Mamba.
 
@@ -147,3 +162,4 @@ We thank the authors of nnU-Net, U-Mamba, and Mamba for releasing their code and
 ## License
 
 This project is released under the Apache License 2.0. See [LICENSE](LICENSE).
+
