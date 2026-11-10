@@ -65,3 +65,7 @@ class nnUNetTrainerDBIMambaUNet_SizeAwareFocalTversky_Loss(nnUNetTrainer):
 
 
 globals()["nnUNetTrainerDBI-MambaUNet_SizeAwareFocalTversky_Loss"] = nnUNetTrainerDBIMambaUNet_SizeAwareFocalTversky_Loss
+
+
+# Compatibility name stored by the released checkpoint.
+globals()["nnUNetTrainerDualResInceptionUMambaBotV2_SizeAwareTversky_Loss_V2_New"] = nnUNetTrainerDBIMambaUNet_SizeAwareFocalTversky_Loss
