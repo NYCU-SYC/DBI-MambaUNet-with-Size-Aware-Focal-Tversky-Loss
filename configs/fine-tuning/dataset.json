@@ -1,0 +1,16 @@
+{
+  "channel_names": {
+    "0": "T1W+C",
+    "1": "T2W"
+  },
+  "labels": {
+    "background": 0,
+    "brain tumor": 1
+  },
+  "numTraining": 5313,
+  "file_ending": ".nii.gz",
+  "study_split_counts": {
+    "train": 4205,
+    "val": 1108
+  }
+}

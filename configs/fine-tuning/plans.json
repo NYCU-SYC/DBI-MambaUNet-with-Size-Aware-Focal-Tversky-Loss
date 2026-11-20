@@ -1,0 +1,159 @@
+{
+  "dataset_name": "Dataset812_DBIFineTuning",
+  "plans_name": "DBIPlans",
+  "image_reader_writer": "SimpleITKIO",
+  "transpose_forward": [
+    0,
+    1,
+    2
+  ],
+  "transpose_backward": [
+    0,
+    1,
+    2
+  ],
+  "label_manager": "LabelManager",
+  "foreground_intensity_properties_per_channel": {
+    "0": {},
+    "1": {}
+  },
+  "configurations": {
+    "3d_lowres": {
+      "data_identifier": "DBIPlans_3d_lowres",
+      "preprocessor_name": "DefaultPreprocessor",
+      "batch_size": 1,
+      "patch_size": [
+        64,
+        224,
+        224
+      ],
+      "spacing": [
+        1.5,
+        0.5,
+        0.5
+      ],
+      "normalization_schemes": [
+        "ZScoreNormalization",
+        "ZScoreNormalization"
+      ],
+      "use_mask_for_norm": [
+        false,
+        false
+      ],
+      "UNet_class_name": "PlainConvUNet",
+      "UNet_base_num_features": 64,
+      "n_conv_per_stage_encoder": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "n_conv_per_stage_decoder": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "num_pool_per_axis": [
+        4,
+        5,
+        5
+      ],
+      "pool_op_kernel_sizes": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ]
+      ],
+      "conv_kernel_sizes": [
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          3
+        ]
+      ],
+      "unet_max_num_features": 768,
+      "resampling_fn_data": "resample_data_or_seg_to_shape",
+      "resampling_fn_seg": "resample_data_or_seg_to_shape",
+      "resampling_fn_data_kwargs": {
+        "is_seg": false,
+        "order": 3,
+        "order_z": 0,
+        "force_separate_z": null
+      },
+      "resampling_fn_seg_kwargs": {
+        "is_seg": true,
+        "order": 1,
+        "order_z": 0,
+        "force_separate_z": null
+      },
+      "resampling_fn_probabilities": "resample_data_or_seg_to_shape",
+      "resampling_fn_probabilities_kwargs": {
+        "is_seg": false,
+        "order": 1,
+        "order_z": 0,
+        "force_separate_z": null
+      },
+      "batch_dice": false,
+      "resample_to_plan_spacing": true,
+      "inference_mirroring_axes": [
+        2
+      ],
+      "initial_learning_rate": 0.0005
+    }
+  }
+}

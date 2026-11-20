@@ -1,0 +1,68 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+=*
+
+# Virtual environments and local configuration
+.env
+.venv/
+venv/
+ENV/
+env/
+.python-version
+.idea/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# nnU-Net data, outputs, and trained weights
+data/nnUNet_raw/**
+!data/nnUNet_raw/**/
+!data/nnUNet_raw/**/dataset.json
+data/nnUNet_preprocessed/
+data/nnUNet_results/
+data/nnUNet_trained_models/
+/nnUNet_raw/
+/nnUNet_preprocessed/
+/nnUNet_results/
+/nnUNet_trained_models/
+**/imagesTr/
+**/imagesTs/
+**/labelsTr/
+**/labelsTs/
+*.nii
+*.nii.gz
+*.npy
+*.npz
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.model
+*.memmap
+
+# Archives and logs
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.log
