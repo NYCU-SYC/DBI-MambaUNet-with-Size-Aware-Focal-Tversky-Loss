@@ -41,7 +41,7 @@ The model uses **64 × 224 × 224** patches and has **81,662,618** parameters. T
 
 ```text
 (64,64,224,224) → (128,32,112,112) → (256,16,56,56)
-→ (512,8,28,28) → (768,4,14,14) → (768,4,7,7)
+→ (512,8,28,28) → (768,4,14,14) → (768,4,14,14)
 ```
 
 The SA-FTL trainer uses 26-connected tumor components within each patch. Its Tversky coefficients are α = 0.3 and β = 0.7, with a direct focal exponent of 1.33, size exponent of 0.8 and smoothing of 10⁻⁶. Positive voxel weights are normalized within the patch. Background voxels receive weight 1.1 in patches with tumor and 2.1 in all-background patches.
